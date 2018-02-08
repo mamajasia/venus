@@ -14,9 +14,9 @@ public class WebdriverManager {
         }
         else
             return webDriver;
-
     }
 
+    @SuppressWarnings("all")
     @Test(expected = NullPointerException.class)
     public void testGetWebDriver(){
       WebdriverManager world = new WebdriverManager();
@@ -24,6 +24,7 @@ public class WebdriverManager {
     }
 
     @Test
+    @SuppressWarnings("all")
     public void testGetWebDriverBasic(){
         WebdriverManager webdriverManager = new WebdriverManager();
         webdriverManager.init();

@@ -1,13 +1,10 @@
 package framework.pageObjects;
 
-import framework.utils.WebElementUtil;
 import framework.utils.WebdriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static framework.utils.WebElementUtil.getElementByLocator;
 import static framework.utils.WebElementUtil.waitForElementToBeVisible;
@@ -24,9 +21,14 @@ public class HomePage {
         WD.get(URL);
     }
 
-    public void typeInSearchFieldAndEnter(String text) {
+    public void typeInSearchField(String text) {
         WebElement searchField = getElementByLocator(SEARCH_FIELD_LOCATOR);
-        searchField.sendKeys(text + Keys.ENTER);
+        searchField.sendKeys(text/* + Keys.ENTER*/);
+    }
+
+    public void pressEnterOnSearchField(){
+        WebElement searchField = getElementByLocator(SEARCH_FIELD_LOCATOR);
+        searchField.sendKeys(Keys.ENTER);
     }
 
     public boolean isResultAreaDisplayed() {
@@ -34,4 +36,5 @@ public class HomePage {
         WebElement resultArea = getElementByLocator(RESULT_AREA_LOCATOR);
         return resultArea.isDisplayed();
     }
+
 }

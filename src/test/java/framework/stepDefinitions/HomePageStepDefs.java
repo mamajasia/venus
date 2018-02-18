@@ -28,4 +28,7 @@ public class HomePageStepDefs {
     public void isSearchResultListDisplayed() {
         Assert.assertTrue(new HomePage().isResultAreaDisplayed());
     }
+
+    @And("^all results on page contain \"(.+)\" phrase$")
+    public void isSearchedPhrasePresentInAllResults(String text) {Assert.assertTrue(new HomePage().isTextPresentInResult(text));}
 }

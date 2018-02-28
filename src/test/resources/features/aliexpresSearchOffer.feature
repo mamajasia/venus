@@ -4,4 +4,4 @@ Feature: Search Offer
     When "iPhone" phrase is entered in search field
     And enter key is pressed
     Then search result list is displayed
-    #And all results on page contain "iPhone" phrase
+    And all results on page contain "iPhone" phrase

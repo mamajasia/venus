@@ -10,10 +10,11 @@ public class WebdriverManager {
 
     public static WebDriver getWebDriver() {
         if (webDriver == null) {
-            throw new NullPointerException("WebDriver has not been initiated");
+            throw new NullPointerException("WebDriver has not been initialized!");
         }
-        else
+        else {
             return webDriver;
+        }
     }
 
     @SuppressWarnings("all")
